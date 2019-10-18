@@ -4,7 +4,8 @@ import {
 } from './APIreqs'
 
 // document.addEventListener('DOMContentLoaded', () => {
-    getPoem();
+    const poem = getPoem();
+
     debugger
     // let ul = document.querySelectorAll('poemUl')
     // ul.addEventListener('load', function () {
