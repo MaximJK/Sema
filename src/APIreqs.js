@@ -1,25 +1,19 @@
 const fetch = require('node-fetch');
 
-export function getPoem() {
-    const fetchTitles = fetch("http://poetrydb.org/title")
+export const getPoem = async() => {
+    debugger
+    debugger
     const authorDiv = document.getElementById('authorDiv');
     const poemH = document.getElementById('poemH');
     const app = document.getElementById('app');
     let ul = document.getElementById('poemUl');
-    let poemObj
-    let poemName;
-    fetchTitles.then(response => {
-        return response.json();
-    }).then(titlesArr => {
-        
-        const titles = titlesArr.titles
-        poemName = titles[Math.floor(Math.random() * titles.length)]
-        fetch(`http://poetrydb.org/title/${poemName}`).then(response => {
-            
-            return response.json();
-        }).then(poem => {
-            
-            poemObj = { title: poem[0].title, author: poem[0].author, lines: poem[0].lines }
+    const fetchTitles = await fetch("http://poetrydb.org/title")
+    const titlesArr = await fetchTitles.json()
+    const titles = titlesArr.titles
+    let poemName = titles[Math.floor(Math.random() * titles.length)]
+    const fetchPoem = await fetch(`http://poetrydb.org/title/${poemName}`)
+    const poem = await fetchPoem.json()
+    return const poemObj = { title: poem[0].title, author: poem[0].author, lines: poem[0].lines }
             poemObj.lines.forEach(line => {
                 let li = document.createElement("li")
                 li.textContent = line
@@ -43,7 +37,13 @@ export function getPoem() {
             lis.forEach(li => {
                 debugger
                 li.addEventListener("click", lineClick);
+
+                
         })
-            retrieved = true
+
+        }).then(response => {
+            console.log(response);
+        })
     })
-    })}
+    return x
+    }
