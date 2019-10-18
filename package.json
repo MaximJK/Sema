@@ -20,6 +20,7 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "autoprefixer": "^9.6.5",
+    "blast-text": "^2.0.0",
     "css-loader": "^3.2.0",
     "fibers": "^4.0.1",
     "mini-css-extract-plugin": "^0.8.0",
