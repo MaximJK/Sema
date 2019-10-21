@@ -36,17 +36,27 @@ li{
     text-align: center;
     width: 95%;
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    font-size: 15vh;
-    white-space:nowrap;
+    font-size: 10vh;
+    line-height: 10vh;
+   
 }
-.lineModal {
-    
+#wordModal{
+    display: none;
+    position: fixed;
+    top: 10%;
+    padding: 25px;
+    margin: 10 px;
+    text-align: center;
+     z-index: 3;
+}
+#wordModal > #defH3, #definitions, H3, #etymology{
+    display: inherit;
+}
 
-}
 #authordiv{
     display: block;
 }

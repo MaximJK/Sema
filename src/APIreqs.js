@@ -1,13 +1,18 @@
+import {
+    wordFetcher
+} from "./wordReq"
 const fetch = require('node-fetch');
 
 export const getPoem = async() => {
     debugger
+    let modalOn = false
     const authorDiv = document.getElementById('authorDiv');
     const poemH = document.getElementById('poemH');
     const app = document.getElementById('app');
     let poemUl = document.getElementById('poemUl');
     const modal = document.getElementById("myModal");
     const modalText = document.getElementById("modalText");
+    let wordModal = document.getElementById("wordModal")
     modalText.innerText = ''
     const fetchTitles = await fetch("http://poetrydb.org/title");
     const titlesArr = await fetchTitles.json();
@@ -31,23 +36,40 @@ export const getPoem = async() => {
     app.appendChild(poemUl)
     
 // Expand Line
+    const fetchWord = function (event) {
+        if (modalOn === true) {
+            let word = event.target.innerText;
+            wordFetcher(word);
+
+
+
+        }
+    }
     const lineClick = function(){
 
         modal.style.display = "block";
-        let line = event.target
-        // let lineClass = line.classList
-        // let lineArr =line.innerText.split(" ")
-        
-        //     `<span className="word-"${i}>${word}</span>`
-        // })
-        // debugger
-        modalText.innerText=line.innerText
+        let line = event.target;
+        debugger
+        let lineClass = line.classList;
+        let lineArr = line.innerText.split(" ");
+      
+        lineArr.forEach((word, i) => {
+            modalText.innerHTML += `<span>${word} </span>`
 
-        modalText.className = lineClass
+        });
+
+        modalOn = true;
+        debugger
+        modalText.className = lineClass;
+        let spans = document.querySelectorAll("span");
+        spans.forEach(span => {
+
+            span.addEventListener("click", fetchWord);
+        });
         
         
-    }
-    let lis = document.querySelectorAll('li')
+    };
+    let lis = document.querySelectorAll('li');
     lis.forEach(li => {
 
         li.addEventListener("click", lineClick);      
@@ -56,6 +78,10 @@ export const getPoem = async() => {
         if (event.target == modal) {
             modal.style.display = "none";
             modalText.innerText = ''
+            debugger
+            wordModal.style.display = "none";
+
+            modalOn = false
         }
     }
 
@@ -75,10 +101,12 @@ export const getPoem = async() => {
             modalText.className = oldClass
         }
     }
-    document.addEventListener("keydown", keypress, false)
+    document.addEventListener("keydown", keypress, false);
 
-    const fetchWord = await fetch(`https://od-api.oxforddictionaries.com:443/api/v2/entries/en-gb/${word}`);
-    const wordInfo = await fetchWord.json();
+
+
+
+
 
 
 }
