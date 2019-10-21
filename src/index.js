@@ -3,10 +3,9 @@ import {
     getPoem
 } from './APIreqs'
 
-// document.addEventListener('DOMContentLoaded', () => {
-    const poem = getPoem();
+document.addEventListener('DOMContentLoaded', () => {
+    getPoem();
 
-    debugger
     // let ul = document.querySelectorAll('poemUl')
     // ul.addEventListener('load', function () {
     //     debugger
@@ -21,7 +20,7 @@ import {
     //         li.addEventListener("click", lineClick);
 // }) 
 // });
-//     })
+    })
     
 
 

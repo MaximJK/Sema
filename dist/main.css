@@ -1,0 +1,4 @@
+body{background-color:black;color:white}#poemDiv{text-align:center}ul{text-align:center;list-style:none;display:inline}li{cursor:pointer;margin:10px 0;font-size:20px}.modal{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,0.9)}#modalText{z-index:2;text-align:center;width:95%;position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);font-size:15vh;white-space:nowrap}#authordiv{display:block}
+
+
+/*# sourceMappingURL=main.css.map*/
