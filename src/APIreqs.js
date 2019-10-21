@@ -37,13 +37,11 @@ export const getPoem = async() => {
         let line = event.target
         // let lineClass = line.classList
         let lineArr =line.innerText.split(" ")
-        // lineArr.forEach((word, i) => {
-
-        // })
-        //     `<span className="word-"${i}>${word}</span>`
-        // })
-        // debugger
-        modalText.innerH=line.innerText
+        lineArr.forEach((word, i) => {
+            modalText.innerHTML += `<span>${word}</span>`
+            
+        })
+        debugger
 
         modalText.className = lineClass
         
