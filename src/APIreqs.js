@@ -36,12 +36,14 @@ export const getPoem = async() => {
         modal.style.display = "block";
         let line = event.target
         // let lineClass = line.classList
-        // let lineArr =line.innerText.split(" ")
-        
+        let lineArr =line.innerText.split(" ")
+        // lineArr.forEach((word, i) => {
+
+        // })
         //     `<span className="word-"${i}>${word}</span>`
         // })
         // debugger
-        modalText.innerText=line.innerText
+        modalText.innerH=line.innerText
 
         modalText.className = lineClass
         
