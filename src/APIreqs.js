@@ -15,11 +15,11 @@ export const getPoem = async() => {
     let wordModal = document.getElementById("wordModal")
     let poemDiv = document.getElementById("poemDiv")
     modalText.innerText = ''
-    const fetchTitles = await fetch("http://poetrydb.org/title");
+    const fetchTitles = await fetch("https://poetrydb.org/title");
     const titlesArr = await fetchTitles.json();
     const titles = titlesArr.titles;
     let poemName = titles[Math.floor(Math.random() * titles.length)];
-    const fetchPoem = await fetch(`http://poetrydb.org/title/${poemName}`);
+    const fetchPoem = await fetch(`https://poetrydb.org/title/${poemName}`);
     const poem = await fetchPoem.json();
     const poemObj = { title: poem[0].title, author: poem[0].author, lines: poem[0].lines };
     poemObj.lines.forEach((line, i) => {
