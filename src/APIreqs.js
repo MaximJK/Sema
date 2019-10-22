@@ -48,6 +48,7 @@ export const getPoem = async() => {
     const lineClick = function(){
 
         modal.style.display = "block";
+
         let line = event.target;
         debugger
         let lineClass = line.classList;
@@ -63,7 +64,6 @@ export const getPoem = async() => {
         modalText.className = lineClass;
         let spans = document.querySelectorAll("span");
         spans.forEach(span => {
-
             span.addEventListener("click", fetchWord);
         });
         
