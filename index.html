@@ -21,16 +21,26 @@ import dist/main.css -->
             <h3>"Etymology</h3>
             <p id="etymology"></p>
         </div>
-        <p id="modalText"></p>
         <div id="myModal" class="modal"></div>
-        <div id="authorDiv"></div>
+        <header><div id="authorDiv"></div>
+        <div id="appInfo">Sema</div>
+        </header>
+        <p id="modalText"></p>
         <div id="poemDiv">
             <h3 id="poemH"></h3>
             <ul id="poemUl"></ul>
         </div>
         </div>
+        <footer>
+            <input type="button" id="buttonStyle" onClick="refreshPage()" value="another poem">  
+        </footer>
     </div>
     <script src="./dist/main.js"></script>
+    <script>
+        function refreshPage() {
+            window.location.reload();
+        } 
+    </script>
 </body>
 
 </html>

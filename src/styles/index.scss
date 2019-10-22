@@ -32,7 +32,7 @@ li{
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 #modalText {
-    z-index: 2;
+    z-index: 3;
     text-align: center;
     width: 95%;
     position: fixed;
@@ -55,6 +55,7 @@ li{
     width: 100%;    
     border-color: red;
     border: 5px;
+    cursor: pointer;
 }
 #wordModal > #defH3, #definitions, #etymology{
     display: inherit;
@@ -64,4 +65,28 @@ li{
 }
 #authordiv{
     display: block;
+}
+#buttonStyle{
+    font-size: 15px;
+    font-family: inherit;
+    margin:0 auto;
+    display:block;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: .5px solid white;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+}
+footer{
+    margin: 20px;
+}
+#appInfo{
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
 }

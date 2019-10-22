@@ -38,12 +38,13 @@ export let wordFetcher = async function(word){
         while (definitionsEl.hasChildNodes()) {
             definitionsEl.removeChild(definitionsEl.firstChild);
         }
+        if (data.definitions !== 'undefined') {
         data.definitions.forEach(def => {
             let li = document.createElement("li");
             li.innerText = def[0];
             definitionsEl.appendChild(li);
-
         });
+        }
         wordModal.style.display = "block"
         debugger
         }
