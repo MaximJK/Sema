@@ -15,8 +15,10 @@ export let wordFetcher = async function(word){
     try {
     let fetchingWord = await fetch(proxyurl + `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordLower}`, options);
     let wordInfo = await fetchingWord.json();
+    debugger
     if (wordInfo.length !== 0) {
         let result = wordInfo.results;
+        debugger
         let definitions = result[0].lexicalEntries[0].entries[0].senses.map(sense => {
             return sense.definitions
         });
@@ -32,6 +34,10 @@ export let wordFetcher = async function(word){
         let definitionsEl = document.getElementById("definitions");
         debugger
         etymologyEl.innerText = data.etymologies[0];
+        debugger
+        while (definitionsEl.hasChildNodes()) {
+            definitionsEl.removeChild(definitionsEl.firstChild);
+        }
         data.definitions.forEach(def => {
             let li = document.createElement("li");
             li.innerText = def[0];

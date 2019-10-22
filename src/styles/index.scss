@@ -49,14 +49,19 @@ li{
     position: fixed;
     top: 10%;
     padding: 25px;
-    margin: 10 px;
+    margin: 10px;
     text-align: center;
-     z-index: 3;
+    z-index: 3;
+    width: 100%;    
+    border-color: red;
+    border: 5px;
 }
-#wordModal > #defH3, #definitions, H3, #etymology{
+#wordModal > #defH3, #definitions, #etymology{
     display: inherit;
 }
-
+#definitions > li{
+    display: inherit;
+}
 #authordiv{
     display: block;
 }
