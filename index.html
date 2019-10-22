@@ -10,31 +10,39 @@ import dist/main.css -->
     <link rel="stylesheet" href="./dist/main.css">
     <title>Sema</title>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <div id="app">
-        <div id='wordModal'>
-            <p></p>
-            <h3 id="defH3">Definitions</h3>
-            <ul id="definitions"></ul>
-            <h3>"Etymology</h3>
-            <p id="etymology"></p>
-        </div>
+        <main>
         <div id="myModal" class="modal"></div>
-        <header><div id="authorDiv"></div>
-        <div id="appInfo">Sema</div>
-        </header>
+        <div className="flexBox">
+            <div id='wordModal'>
+                <p></p>
+                <h3 id="defH3">Definitions</h3>
+                <ul id="definitions"></ul>
+                <h3>"Etymology</h3>
+                <p id="etymology"></p>
+            </div>
+            <header><div id="authorDiv"></div>
+            <div id="appInfo">sema</div>
+            </header>
         <p id="modalText"></p>
         <div id="poemDiv">
             <h3 id="poemH"></h3>
             <ul id="poemUl"></ul>
         </div>
         </div>
-        <footer>
+        <footer id="footer">
+
             <input type="button" id="buttonStyle" onClick="refreshPage()" value="another poem">  
+
         </footer>
-    </div>
+        </main>
+        </div>
     <script src="./dist/main.js"></script>
     <script>
         function refreshPage() {

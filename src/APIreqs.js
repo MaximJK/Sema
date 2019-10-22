@@ -13,6 +13,7 @@ export const getPoem = async() => {
     const modal = document.getElementById("myModal");
     const modalText = document.getElementById("modalText");
     let wordModal = document.getElementById("wordModal")
+    let poemDiv = document.getElementById("poemDiv")
     modalText.innerText = ''
     const fetchTitles = await fetch("http://poetrydb.org/title");
     const titlesArr = await fetchTitles.json();
@@ -33,7 +34,7 @@ export const getPoem = async() => {
 
     let a = document.createTextNode(poemObj.author)
     authorDiv.appendChild(a)
-    app.appendChild(poemUl)
+    poemDiv.appendChild(poemUl)
     
 // Expand Line
     const fetchWord = function (event) {
