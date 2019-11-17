@@ -12,8 +12,10 @@ export const getPoem = async() => {
     let poemUl = document.getElementById('poemUl');
     const modal = document.getElementById("myModal");
     const modalText = document.getElementById("modalText");
-    let wordModal = document.getElementById("wordModal")
-    let poemDiv = document.getElementById("poemDiv")
+    let wordModal = document.getElementById("wordModal");
+    let poemDiv = document.getElementById("poemDiv");
+    let leftArrow = document.getElementById("leftArrow");
+    let rightArrow = document.getElementById("rightArrow")
     modalText.innerText = ''
     const fetchTitles = await fetch("https://thundercomb-poetry-db-v1.p.rapidapi.com/title", {
         "method": "GET",
@@ -68,11 +70,12 @@ export const getPoem = async() => {
         debugger
         let lineClass = line.classList;
         let lineArr = line.innerText.split(" ");
-      
+        
         lineArr.forEach((word, i) => {
             modalText.innerHTML += `<span>${word} </span>`
 
         });
+        
 
         modalOn = true;
         debugger
@@ -112,7 +115,6 @@ export const getPoem = async() => {
             let nextLi = document.getElementsByClassName(oldClass);
     
             modalText.innerText = nextLi[0].innerText;
-            debugger
             modalText.className = oldClass
         }
     }
@@ -120,8 +122,27 @@ export const getPoem = async() => {
 
 
 
+// arrow click listeners $ functions
+    const leftClick = function () {
+        if (modalText.innerText !== '') {
+            let oldClass = Number(modalText.classList.value)
+            oldClass = oldClass - 1
+            let nextLi = document.getElementsByClassName(oldClass);
+            modalText.innerText = nextLi[0].innerText;
+            modalText.className = oldClass
+        }
+    }
+    const rightClick = function () {
+        if (modalText.innerText !== '') {
+            let oldClass = Number(modalText.classList.value)
+            oldClass = oldClass + 1
+            let nextLi = document.getElementsByClassName(oldClass);
+            modalText.innerText = nextLi[0].innerText;
+            modalText.className = oldClass
+        }
+        
+    }
 
-
-
-
+    leftArrow.addEventListener("click", leftClick );
+    rightArrow.addEventListener("click", rightClick);
 }

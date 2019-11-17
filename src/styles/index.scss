@@ -119,3 +119,36 @@ header{
     display: flex;
     flex-shrink: 0;
 }
+#leftArrow{
+
+
+position: fixed;
+padding: 15px;
+font-size: 65px;
+line-height: 20.5em;
+color: white;
+height: auto;
+
+
+}
+#rightArrow{
+height: max-content;
+position: fixed;
+padding: 15px;
+right: 0px;
+font-size: 65px;
+line-height: 20.5em;
+color: white;
+height: auto;
+
+}
+#rightArrow:active, #leftArrow:active {
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.673);
+    
+    color: black;
+}
+span:active{
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.673);
+    
+    color: black;
+}
