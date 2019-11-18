@@ -51,8 +51,13 @@ export const getPoem = async() => {
     let h = document.createTextNode(poemObj.title)
     poemH.appendChild(h)
 
-    let a = document.createTextNode(poemObj.author)
-    authorDiv.appendChild(a)
+    let authorName = document.createTextNode(poemObj.author)
+    debugger
+    if (authorName.nodeValue === "            George Gordon, Lord Byron" || authorName.nodeValue === "George Gordon, Lord Byron" ) {
+        authorName.nodeValue = 'Lord Byron'
+        debugger
+    }
+    authorDiv.appendChild(authorName)
     poemDiv.appendChild(poemUl)
     
 // Expand Line
@@ -153,6 +158,7 @@ export const getPoem = async() => {
     // author click listener
     let authorFetcher = async function (author) {
         let authorDiv = document.getElementById('authorInfo')
+        
         debugger
         if (authOn === false) {
             if (authorDiv.innerHTML.length === 0) {

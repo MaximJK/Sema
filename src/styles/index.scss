@@ -75,10 +75,13 @@ li{
 #definitions > li{
     display: inherit;
 }
-#authordiv{
-    margin-left: 10px;
-    display: block;
-    font-size: 12px;
+#authorDiv{
+    cursor: pointer;
+    font-size: 20px
+}
+#authorDiv:hover{
+    
+    text-decoration: line-through;
 }
 #buttonStyle{
     display:flex;
