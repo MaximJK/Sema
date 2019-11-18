@@ -12,7 +12,8 @@ import dist/main.css -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet"
+    href="//en.wikipedia.org/w/load.php?debug=false&amplang=en&modules=mediawiki.legacy.commonPrint,shared%7Cskins.vector.styles&amponly=styles&ampskin=vector&amp*">
 
 </head>
 
@@ -30,7 +31,7 @@ import dist/main.css -->
     </div>
 
         </div>
-        <div className="flexBox">
+        <div class="flexBox">
             <div id='wordModal'>
                 <p></p>
                 <h2 id="defH3">Definitions</h2>
@@ -38,13 +39,18 @@ import dist/main.css -->
                 <h3>"Etymology</h3>
                 <p id="etymology"></p>
             </div>
-            <header><div id="authorDiv"></div>
+            <header><div id="authorDiv">
+            </div>
             <div id="appInfo">sema</div>
             </header>
         <p id="modalText"></p>
+        <div id='content'>
+        <div id='authorInfo'></div>
         <div id="poemDiv">
             <h3 id="poemH"></h3>
             <ul id="poemUl"></ul>
+        </div>
+        <div id="appDiv"></div>
         </div>
         </div>
         <footer id="footer">

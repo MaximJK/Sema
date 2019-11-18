@@ -1,11 +1,13 @@
 import {
     wordFetcher
 } from "./wordReq"
+
 const fetch = require('node-fetch');
 
 export const getPoem = async() => {
-    debugger
+    
     let modalOn = false
+    let authOn = false
     const authorDiv = document.getElementById('authorDiv');
     const poemH = document.getElementById('poemH');
     const app = document.getElementById('app');
@@ -15,7 +17,8 @@ export const getPoem = async() => {
     let wordModal = document.getElementById("wordModal");
     let poemDiv = document.getElementById("poemDiv");
     let leftArrow = document.getElementById("leftArrow");
-    let rightArrow = document.getElementById("rightArrow")
+    let rightArrow = document.getElementById("rightArrow");
+    let author = document.getElementById("authorDiv")
     modalText.innerText = ''
     const fetchTitles = await fetch("https://thundercomb-poetry-db-v1.p.rapidapi.com/title", {
         "method": "GET",
@@ -67,7 +70,7 @@ export const getPoem = async() => {
         modal.style.display = "block";
 
         let line = event.target;
-        debugger
+        
         let lineClass = line.classList;
         let lineArr = line.innerText.split(" ");
         
@@ -78,7 +81,7 @@ export const getPoem = async() => {
         
 
         modalOn = true;
-        debugger
+        
         modalText.className = lineClass;
         let spans = document.querySelectorAll("span");
         spans.forEach(span => {
@@ -96,7 +99,7 @@ export const getPoem = async() => {
         if (event.target == modal) {
             modal.style.display = "none";
             modalText.innerText = ''
-            debugger
+            
             wordModal.style.display = "none";
 
             modalOn = false
@@ -139,10 +142,35 @@ export const getPoem = async() => {
             let nextLi = document.getElementsByClassName(oldClass);
             modalText.innerText = nextLi[0].innerText;
             modalText.className = oldClass
+
         }
         
     }
 
     leftArrow.addEventListener("click", leftClick );
     rightArrow.addEventListener("click", rightClick);
+
+    // author click listener
+    let authorFetcher = async function (author) {
+        let authorDiv = document.getElementById('authorInfo')
+        debugger
+        if (authOn === false) {
+            if (authorDiv.innerHTML.length === 0) {
+                let body = await fetch(`https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=${author}`, {
+                    mode: 'cors'
+                });
+                await console.log(body)
+                let jsonbody = await body.json();
+                authorDiv.innerHTML = Object.values(jsonbody.query.pages)[0].extract
+            }
+            authorDiv.style.visibility = "visible"
+            authOn = true
+        } else {
+            authorDiv.style.visibility = "hidden"
+            authOn = false
+        }
+
+
+    }
+    author.addEventListener("click", function() {authorFetcher(author.textContent)})
 }

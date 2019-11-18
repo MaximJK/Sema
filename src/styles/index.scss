@@ -4,11 +4,12 @@ body {
     font-family: 'Vollkorn', serif;
 }
 #poemDiv{
+    width: 45em;
+    display: block;
     text-align: center;
     flex-grow: 1;
     overflow: auto;
     min-height: 2em;
-    
 }
 main{
     width: 100%;
@@ -116,8 +117,8 @@ header{
 }
 
 .flexBox{
-    display: flex;
     flex-shrink: 0;
+    
 }
 #leftArrow{
 
@@ -151,4 +152,37 @@ span:active{
     text-shadow: 2px 2px rgba(255, 255, 255, 0.673);
     
     color: black;
+}
+
+#authorInfo{
+    width: 25%;
+    border: 1px solid rgb(172, 172, 172);
+    overflow: auto;
+    margin: 0px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 40px;
+    max-height: 70em;
+    visibility: hidden;
+    padding: 1em;
+}
+
+#content{
+display: flex;
+justify-content: center;
+}
+#appDiv{
+width: 25%;
+border: 1px solid  rgb(172, 172, 172);
+float: right;
+}
+
+#poemDiv{
+    width: 59%;
+    display: block;
+    text-align: center;
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+    
 }

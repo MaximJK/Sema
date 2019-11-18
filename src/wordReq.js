@@ -15,7 +15,7 @@ export let wordFetcher = async function(word){
     try {
     let fetchingWord = await fetch(proxyurl + `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordLower}`, options);
     let wordInfo = await fetchingWord.json();
-    debugger
+
     if (wordInfo.length !== 0) {
         let result = wordInfo.results;
         debugger

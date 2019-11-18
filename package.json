@@ -9,6 +9,12 @@
     "maintained node versions",
     "not dead"
   ],
+  "node": {
+  "fs": "empty",
+   "net": "empty",
+      "tls": "empty",
+      "dns": "empty"
+  },
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "webpack:watch": "webpack --watch --config webpack.dev.js",
@@ -54,4 +60,5 @@
     "url": "https://github.com/MaximJK/Sema/issues"
   },
   "homepage": "https://github.com/MaximJK/Sema#readme"
+  
 }
