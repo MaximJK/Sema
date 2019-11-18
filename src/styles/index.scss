@@ -151,7 +151,7 @@ height: auto;
     
     color: black;
 }
-span:active{
+span:hover{
     text-shadow: 2px 2px rgba(255, 255, 255, 0.673);
     
     color: black;
@@ -159,15 +159,17 @@ span:active{
 
 #authorInfo{
     width: 25%;
-    border: 1px solid rgb(172, 172, 172);
+    border: 1px solid #acacac;
     overflow: auto;
     margin: 0px;
     float: left;
+    
     margin-left: 15px;
-    margin-top: 40px;
+    margin-top: 50px;
     max-height: 70em;
     visibility: hidden;
-    padding: 1em;
+    padding: .5em;
+    padding-top: 0px;
 }
 
 #content{

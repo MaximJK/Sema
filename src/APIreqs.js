@@ -52,10 +52,10 @@ export const getPoem = async() => {
     poemH.appendChild(h)
 
     let authorName = document.createTextNode(poemObj.author)
-    debugger
+    
     if (authorName.nodeValue === "            George Gordon, Lord Byron" || authorName.nodeValue === "George Gordon, Lord Byron" ) {
         authorName.nodeValue = 'Lord Byron'
-        debugger
+        
     }
     authorDiv.appendChild(authorName)
     poemDiv.appendChild(poemUl)
@@ -159,7 +159,7 @@ export const getPoem = async() => {
     let authorFetcher = async function (author) {
         let authorDiv = document.getElementById('authorInfo')
         
-        debugger
+        
         if (authOn === false) {
             if (authorDiv.innerHTML.length === 0) {
                 let body = await fetch(`https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=${author}`, {
