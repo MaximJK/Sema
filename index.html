@@ -12,6 +12,8 @@ import dist/main.css -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -23,9 +25,8 @@ import dist/main.css -->
             
             </div>
             <div id="rightArrow">
-                ↝
-            
-    </div>
+                ↝       
+        </div>
 
         </div>
         <div class="flexBox">
@@ -36,24 +37,32 @@ import dist/main.css -->
                 <h3>"Etymology</h3>
                 <p id="etymology"></p>
             </div>
-            <header><div id="authorDiv">
+            <header>
+            <div id="divBlock">
+            <div id="authorDiv">
             </div>
+            <i class="fas fa-align-justify"></i>
+            </div>
+            
             <div id="appInfo">sema</div>
             </header>
         <p id="modalText"></p>
         <div id='content'>
-        <div id='authorInfo'></div>
+        <div id='authorInfo'>
+        </div>
         <div id="poemDiv">
             <h1 id="poemH"></h1>
             <ul id="poemUl"></ul>
         </div>
-        <div id="appDiv"></div>
+        <div id="appDiv">
+            
+        </div>
         </div>
         </div>
         <footer id="footer">
-
+            <p id="copy">© 2019 Max Koiwai</p>
             <input type="button" id="buttonStyle" onClick="refreshPage()" value="another poem">  
-
+            <i class="fab fa-github"></i>
         </footer>
         </main>
         </div>

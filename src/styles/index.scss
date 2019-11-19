@@ -77,7 +77,8 @@ li{
 }
 #authorDiv{
     cursor: pointer;
-    font-size: 20px
+    font-size: 20px;
+    float: left;
 }
 #authorDiv:hover{
     
@@ -99,7 +100,7 @@ li{
 footer {
     position:fixed;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width:100%;
     bottom :0;
     background-color: black;
@@ -107,6 +108,9 @@ footer {
 #appInfo{
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 5vh;
+}
+#appInfo:hover{
+    text-decoration: line-through;
 }
 
 header{
@@ -190,4 +194,29 @@ span:hover{
     overflow: auto;
     min-height: 2em;
     
+}
+#copy{
+    align-self: flex-end; 
+    color: #5a5a5a;
+    font-size: 14px;
+}
+.fa-github{
+    font-family: 'Font Awesome 5 Brands';
+    margin-right: 20px;
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: #5a5a5a;
+    align-self: flex-end;
+}
+
+.fa-github:hover{
+color: white;
+}
+
+.fa-align-justify{
+    margin-left: 15px;
+    margin-top: 5px;
+}
+#divBlock{
+    display: inline-block;
 }
