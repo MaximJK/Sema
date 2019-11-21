@@ -13,8 +13,7 @@ main{
 ul{
     text-align:center;
     list-style: none;
-    display: inline;
-    
+    display: inline-block;
 
 }
 
@@ -69,8 +68,7 @@ li{
 #authorDiv{
     cursor: pointer;
     font-size: 20px;
-    float: left;
-    
+    display: inline-block;
 }
 #authorDiv:hover{
     
@@ -102,10 +100,10 @@ footer {
 #appInfo{
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 5vh;
-    display: inline-block;
     text-align: right;
-    padding-right: 1%;
+    float: right;
     vertical-align: top;
+    padding-right: .5em;
 }
 #appInfo:hover{
     text-decoration: white line-through;
@@ -117,16 +115,15 @@ footer {
 }
 header{
     position:fixed;
-    display: inline-flex;
-    justify-content: space-between;
+    display: inline-block;
     width: 100%;
     top:0;
     height: 40px;
-    padding-right: 1%;
     padding-bottom: 1.8em;;
     background-color: black;
     border-bottom: 1px solid #4d3d16;
     z-index: 1;
+    text-align: center;
 }
 #authorInfo{
     border: 1px solid #2b2a28;
@@ -219,13 +216,14 @@ span:hover{
     transition: opacity 3s;
     height: fit-content;
     position: fixed;
-    display: inline-block;
+    
     right: 0;
     margin-top: 4.5em;
 }
 #poemH{
     display: inline-block;
-    text-align: center;
+    
+    
 }
 
 #copy{
@@ -243,18 +241,17 @@ span:hover{
 }
 
 .fa-github:hover{
-color: white;
+    color: white;
 }
 
 .fa-align-justify{
-    margin-left: 10px;
-    margin-top: 5px;
+    margin-left: 5px;
 }
 #divBlock{
-    display: inline-block;
-    padding-left: 1%;
-    margin-top: 1.5em;
+    padding-left: 1em;
+    margin-top: 1em;
     vertical-align: top;
+    float: left;
 }
 li:hover{
     color: darkgoldenrod;
