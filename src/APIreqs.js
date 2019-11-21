@@ -8,6 +8,7 @@ export const getPoem = async() => {
     
     let modalOn = false
     let authOn = false
+    let appOn = false
     const authorDiv = document.getElementById('authorDiv');
     const poemH = document.getElementById('poemH');
     const app = document.getElementById('app');
@@ -18,7 +19,10 @@ export const getPoem = async() => {
     let poemDiv = document.getElementById("poemDiv");
     let leftArrow = document.getElementById("leftArrow");
     let rightArrow = document.getElementById("rightArrow");
-    let author = document.getElementById("authorDiv")
+    let author = document.getElementById("divBlock");
+    let content = document.getElementById("content");
+    let appInfo = document.getElementById("appInfo")
+    let appDiv = document.getElementById("appDiv");
     modalText.innerText = ''
     const fetchTitles = await fetch("https://thundercomb-poetry-db-v1.p.rapidapi.com/title", {
         "method": "GET",
@@ -72,8 +76,8 @@ export const getPoem = async() => {
     }
     const lineClick = function(){
 
+        content.style.filter = "blur(1px)";
         modal.style.display = "block";
-
         let line = event.target;
         
         let lineClass = line.classList;
@@ -106,7 +110,7 @@ export const getPoem = async() => {
             modalText.innerText = ''
             
             wordModal.style.display = "none";
-
+            content.style.filter = "none"
             modalOn = false
         }
     }
@@ -158,25 +162,39 @@ export const getPoem = async() => {
     // author click listener
     let authorFetcher = async function (author) {
         let authorDiv = document.getElementById('authorInfo')
-        
+    
         
         if (authOn === false) {
             if (authorDiv.innerHTML.length === 0) {
                 let body = await fetch(`https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=${author}`, {
                     mode: 'cors'
                 });
-                await console.log(body)
                 let jsonbody = await body.json();
+                
                 authorDiv.innerHTML = Object.values(jsonbody.query.pages)[0].extract
             }
-            authorDiv.style.visibility = "visible"
+            authorDiv.style.opacity = 1
             authOn = true
         } else {
-            authorDiv.style.visibility = "hidden"
+            authorDiv.style.opacity = 0
             authOn = false
         }
 
 
     }
     author.addEventListener("click", function() {authorFetcher(author.textContent)})
-}
+
+
+    appInfo.addEventListener("click", function () { appFetcher() })
+
+    let appFetcher = function () {
+        
+        if (appOn === false) {
+        appDiv.style.opacity = 1
+        appOn = true
+        } else {
+            appDiv.style.opacity = 0
+            appOn = false
+        }
+    }
+    }
