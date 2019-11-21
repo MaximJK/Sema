@@ -102,13 +102,10 @@ footer {
 #appInfo{
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 5vh;
-    width: 31%;
     display: inline-block;
     text-align: right;
     padding-right: 1%;
     vertical-align: top;
-    
-    
 }
 #appInfo:hover{
     text-decoration: white line-through;
@@ -120,8 +117,8 @@ footer {
 }
 header{
     position:fixed;
-    display: inline-block;
-    
+    display: inline-flex;
+    justify-content: space-between;
     width: 100%;
     top:0;
     height: 40px;
@@ -130,6 +127,24 @@ header{
     background-color: black;
     border-bottom: 1px solid #4d3d16;
     z-index: 1;
+}
+#authorInfo{
+    border: 1px solid #2b2a28;
+    overflow: auto;
+    margin: 0px;
+    float: left;
+    height: fit-content;
+    margin-left: 15px;
+    margin-top: 1em;
+    max-height: 70em;
+    opacity: 0;
+    padding: .5em;
+    padding-top: 0px;
+    transition: opacity 3s;
+    position: fixed;
+    margin-top: 4.5em;
+    width: 22.5%;
+    
 }
 
 .flexBox{
@@ -170,27 +185,24 @@ span:hover{
     color: darkgoldenrod;
 }
 
-#authorInfo{
-    width: 22.5%;
-    border: 1px solid #2b2a28;
-    overflow: auto;
-    margin: 0px;
-    float: left;
-    height: fit-content;
-    margin-left: 15px;
-    margin-top: 1em;
-    max-height: 70em;
-    opacity: 0;
-    padding: .5em;
-    padding-top: 0px;
-    transition: opacity 3s;
-    position: fixed;
-    
-}
 
 #content{
-    
+    display: inline-flex;
+    justify-content: center;
     margin-top: 4em;
+    width: 100%;
+}
+#poemDiv{
+
+    display: inline-block;
+    text-align: center;
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+
+    border-bottom: 1px solid #282828;
+    padding-bottom: 5em;
+    
 }
 #appDiv{
     width: 22.5%;
@@ -209,28 +221,13 @@ span:hover{
     position: fixed;
     display: inline-block;
     right: 0;
-
-    
-    
+    margin-top: 4.5em;
 }
 #poemH{
-    width: 33%;
     display: inline-block;
     text-align: center;
 }
-#poemDiv{
-    width: 55%;
-    display: block;
-    text-align: center;
-    flex-grow: 1;
-    overflow: auto;
-    min-height: 2em;
-    position: absolute;
-    left: 25%;
-    border-bottom: 1px solid #282828;
-    padding-bottom: 5em;
-    
-}
+
 #copy{
     align-self: flex-end; 
     color: #5a5a5a;
@@ -255,7 +252,6 @@ color: white;
 }
 #divBlock{
     display: inline-block;
-    width: 33%;
     padding-left: 1%;
     margin-top: 1.5em;
     vertical-align: top;
