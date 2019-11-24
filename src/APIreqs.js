@@ -20,9 +20,9 @@ export const getPoem = async() => {
     let leftArrow = document.getElementById("leftArrow");
     let rightArrow = document.getElementById("rightArrow");
     let author = document.getElementById("divBlock");
-    let content = document.getElementById("content");
     let appInfo = document.getElementById("appInfo")
     let appDiv = document.getElementById("appDiv");
+    let flexBox = document.getElementById("flexBox");
     modalText.innerText = ''
     const fetchTitles = await fetch("https://thundercomb-poetry-db-v1.p.rapidapi.com/title", {
         "method": "GET",
@@ -79,7 +79,7 @@ export const getPoem = async() => {
     }
     const lineClick = function(){
 
-        content.style.filter = "blur(1px)";
+        flexBox.style.filter = "blur(1px)";
         modal.style.display = "block";
         let line = event.target;
         
@@ -113,7 +113,7 @@ export const getPoem = async() => {
             modalText.innerText = ''
             
             wordModal.style.display = "none";
-            content.style.filter = "none"
+            flexBox.style.filter = "none"
             modalOn = false
         }
     }

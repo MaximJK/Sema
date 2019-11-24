@@ -1,7 +1,9 @@
 body {
-    background-color: black;
+        background-image: radial-gradient(circle at right, #090b19, #171308);
     color: white;
     font-family: 'Vollkorn', serif;
+    height: 100vh;
+    min-height: 100vh;
 }
 main{
     width: 100%;
@@ -17,7 +19,7 @@ ul{
 
 }
 
-li{
+#poemUl > li{
     cursor: pointer;
     line-height: 2em;
     font-size: 20px;
@@ -54,6 +56,7 @@ li{
     padding: 15px;
     text-align: center;
     z-index: 3;
+        max-width: 70em;
       
     border-color: red;
     cursor: pointer;
@@ -106,6 +109,7 @@ footer {
     background-color: black;
     border-top: 1px solid #4d3d16;
     justify-content: center;
+    left: 0;
 }
 #subFooter{
     width: 100%;
@@ -122,6 +126,7 @@ footer {
     display: inline-block;
     vertical-align: top;
     padding-right: .5em;
+    line-height: 1.3;
 }
 #appInfo:hover{
         text-decoration: #6e6e6e line-through;
@@ -140,6 +145,7 @@ header {
     z-index: 1;
     text-align: center;
     height: 5.5%;
+    left: 0;
 }
 #subHeader {
     width: 100%;
@@ -201,7 +207,6 @@ header {
 }
 span:hover{
     text-shadow: 2px 2px rgba(255, 255, 255, 0.673);
-    
     color: darkgoldenrod;
 }
 
@@ -239,6 +244,7 @@ span:hover{
 }
 #poemH{
     display: inline-block;
+    line-height: 1;
 }
 #poemUl{
      border-bottom: 1px solid #282828;
@@ -270,8 +276,9 @@ span:hover{
     margin-top: 1em;
     vertical-align: top;
     padding-left: 1.3em;
-
+    line-height: 1;
 }
-li:hover{
-    color: darkgoldenrod;
+#poemUl > li:hover{
+    color: #b8860b;
+    background-image: linear-gradient( black, white, black);
 }
