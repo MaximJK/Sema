@@ -59,7 +59,10 @@ export const getPoem = async() => {
     
     if (authorName.nodeValue === "            George Gordon, Lord Byron" || authorName.nodeValue === "George Gordon, Lord Byron" ) {
         authorName.nodeValue = 'Lord Byron'
-        
+    }
+    if (authorName.nodeValue === "Emily Bronte") {
+        authorName.nodeValue = 'Emily Brontë'
+
     }
     authorDiv.appendChild(authorName)
     poemDiv.appendChild(poemUl)
@@ -127,7 +130,8 @@ export const getPoem = async() => {
             let nextLi = document.getElementsByClassName(oldClass);
     
             modalText.innerText = nextLi[0].innerText;
-            modalText.className = oldClass
+            modalText.className = oldClass;
+            wordModal.style.display = "none";
         }
     }
     document.addEventListener("keydown", keypress, false);
@@ -137,11 +141,12 @@ export const getPoem = async() => {
 // arrow click listeners $ functions
     const leftClick = function () {
         if (modalText.innerText !== '') {
-            let oldClass = Number(modalText.classList.value)
-            oldClass = oldClass - 1
+            let oldClass = Number(modalText.classList.value);
+            oldClass = oldClass - 1;
             let nextLi = document.getElementsByClassName(oldClass);
             modalText.innerText = nextLi[0].innerText;
             modalText.className = oldClass
+            wordModal.style.display = "none";
         }
     }
     const rightClick = function () {
@@ -150,7 +155,8 @@ export const getPoem = async() => {
             oldClass = oldClass + 1
             let nextLi = document.getElementsByClassName(oldClass);
             modalText.innerText = nextLi[0].innerText;
-            modalText.className = oldClass
+            modalText.className = oldClass;
+            wordModal.style.display = "none";
 
         }
         
@@ -171,13 +177,13 @@ export const getPoem = async() => {
                 });
                 let jsonbody = await body.json();
                 
-                authorDiv.innerHTML = Object.values(jsonbody.query.pages)[0].extract
+                authorDiv.innerHTML = Object.values(jsonbody.query.pages)[0].extract;
             }
-            authorDiv.style.opacity = 1
-            authOn = true
+            authorDiv.style.opacity = 1;
+            authOn = true;
         } else {
-            authorDiv.style.opacity = 0
-            authOn = false
+            authorDiv.style.opacity = 0;
+            authOn = false;
         }
 
 

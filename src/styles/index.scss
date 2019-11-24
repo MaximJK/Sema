@@ -19,7 +19,7 @@ ul{
 
 li{
     cursor: pointer;
-    margin: 10px 0;
+    line-height: 2em;
     font-size: 20px;
 }
 
@@ -33,7 +33,7 @@ li{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.797); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.872); /* Black w/ opacity */
 }
 #modalText {
     z-index: 3;
@@ -50,14 +50,23 @@ li{
 #wordModal{
     display: none;
     position: fixed;
-    top: 5%;
+    top: 5.5%;
     padding: 15px;
-    margin: 10px;
     text-align: center;
     z-index: 3;
-    width: 100%;    
+      
     border-color: red;
     cursor: pointer;
+    border: 1px solid darkgoldenrod;
+    background-color: rgba(158, 158, 158, 0.728);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+
+
 }
 #wordModal > #defH3, #definitions, #etymology{
     display: inherit;
@@ -72,58 +81,72 @@ li{
 }
 #authorDiv:hover{
     
-    text-decoration: line-through;
+        text-decoration: #6e6e6e line-through;
 }
 #buttonStyle{
     display:flex;
     font-size: 15px;
     font-family: inherit;
     background-color: transparent;
-    border: .5px solid white;
+    border: .5px solid #2d2d2d;
     padding: 10px;
     cursor: pointer;
     overflow: hidden;
     color: white;
     margin: 20px;
+    z-index: 1;
 }
 
 footer {
-    position:fixed;
+    position: fixed;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    background-color: black;
+    border-top: 1px solid #4d3d16;
+    justify-content: center;
+}
+#subFooter{
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    bottom :0;
-    background-color: black;
-    border-top: 1px solid #4d3d16
-    
+    position: inherit;
+    bottom: inherit;
+    z-index: 0;
 }
 #appInfo{
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 5vh;
     text-align: right;
-    float: right;
+    display: inline-block;
     vertical-align: top;
     padding-right: .5em;
 }
 #appInfo:hover{
-    text-decoration: white line-through;
+        text-decoration: #6e6e6e line-through;
     
 }
 #line{
     width: 50%;
 
 }
-header{
-    position:fixed;
-    display: inline-block;
+header {
+    position: fixed;
     width: 100%;
-    top:0;
-    height: 40px;
-    padding-bottom: 1.8em;;
+    top: 0;
     background-color: black;
     border-bottom: 1px solid #4d3d16;
     z-index: 1;
     text-align: center;
+    height: 5.5%;
+}
+#subHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: inherit;
 }
 #authorInfo{
     border: 1px solid #2b2a28;
@@ -183,12 +206,6 @@ span:hover{
 }
 
 
-#content{
-    display: inline-flex;
-    justify-content: center;
-    margin-top: 4em;
-    width: 100%;
-}
 #poemDiv{
 
     display: inline-block;
@@ -196,9 +213,9 @@ span:hover{
     flex-grow: 1;
     overflow: auto;
     min-height: 2em;
-
-    border-bottom: 1px solid #282828;
-    padding-bottom: 5em;
+    width: 100%;
+    margin-top: 4em;
+    margin-bottom: 5em;
     
 }
 #appDiv{
@@ -222,10 +239,12 @@ span:hover{
 }
 #poemH{
     display: inline-block;
-    
-    
 }
-
+#poemUl{
+     border-bottom: 1px solid #282828;
+    padding: 0;
+    padding-bottom: 2em;
+}
 #copy{
     align-self: flex-end; 
     color: #5a5a5a;
@@ -248,10 +267,10 @@ span:hover{
     margin-left: 5px;
 }
 #divBlock{
-    padding-left: 1em;
     margin-top: 1em;
     vertical-align: top;
-    float: left;
+    padding-left: 1.3em;
+
 }
 li:hover{
     color: darkgoldenrod;

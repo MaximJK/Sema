@@ -30,12 +30,14 @@ import dist/main.css -->
 
         </div>
             <header>
+            <h1 id="poemH"></h1>
+                <div id="subHeader">
             <div id="divBlock">
             <p id="authorDiv"></p>
             <i class="fas fa-align-justify"></i>
             </div>
-            <h1 id="poemH"></h1>
             <div id="appInfo">sema</div>
+            </div>
             </header>
         <div id="flexBox">
             <div id='wordModal'>
@@ -52,15 +54,15 @@ import dist/main.css -->
             <p>then click a word for its definition and etymology</p>
             <p>change lines with arrow keys or arros on screen</p>
         </div>
-        <div id='content'>
         <div id="poemDiv">
             <ul id="poemUl"></ul>
         </div>
-        </div>
         <footer id="footer">
-            <p id="copy">© 2019 Max Koiwai</p>
             <input type="button" id="buttonStyle" onClick="refreshPage()" value="another poem">
+            <div id="subFooter">
+            <p id="copy">© 2019 Max Koiwai</p>
             <i class="fab fa-github"></i>
+            </div>
         </footer>
         </div>
         
