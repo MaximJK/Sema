@@ -53,9 +53,10 @@ import dist/main.css -->
            <p> click a line to expand it </p>
             <p>then click a word for its definition and etymology</p>
             <p>change lines with arrow keys or arros on screen</p>
+            <input type="button" id="buttonStyle" onClick="addLineNumber()" value="show line number">
         </div>
         <div id="poemDiv">
-            <ul id="poemUl"></ul>
+            <ol id="poemOl"></ol>
         </div>
         </div>
         <footer id="footer">
@@ -71,7 +72,19 @@ import dist/main.css -->
     <script>
         function refreshPage() {
             window.location.reload();
-        } 
+        } function addLineNumber() {
+            
+            let poemOl = document.querySelectorAll('#poemOl li');
+            if (poemOl[0].style.overflow !== "visible") {
+            for (let i = 0; i < poemOl.length; i++) {
+                poemOl[i].style.overflow = "visible"
+                }
+            } else {
+                for (let i = 0; i < poemOl.length; i++) {
+                    poemOl[i].style = ""
+                }
+            }
+        }
     </script>
 </body>
 

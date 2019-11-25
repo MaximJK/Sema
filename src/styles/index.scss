@@ -19,12 +19,24 @@ ul{
 
 }
 
-#poemUl > li{
+#poemOl > li{
     cursor: pointer;
     line-height: 2em;
     font-size: 20px;
+    overflow: hidden;
+   
 }
-
+#poemOl > li:hover{
+       color: #b8860b;
+    list-style: outside decimal;
+    overflow: visible;
+    
+    
+}
+#poemOl:active{
+    list-style: outside decimal;
+    overflow: visible;
+}
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -206,7 +218,6 @@ header {
 #rightArrow{
     height: max-content;
     position: fixed;
-    width: 1.5em;
     right: 0px;
     font-size: 80px;
     line-height: 16em;
@@ -227,8 +238,7 @@ span:hover{
 
 
 #poemDiv{
-
-    display: inline-block;
+    display: inline-flex;
     text-align: center;
     flex-grow: 1;
     overflow: auto;
@@ -236,6 +246,7 @@ span:hover{
     width: 100%;
     margin-top: 4em;
     margin-bottom: 5em;
+    justify-content: center;
     
 }
 #appDiv{
@@ -260,11 +271,18 @@ span:hover{
 #poemH{
     display: inline-block;
     line-height: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 75%;
+    white-space: nowrap;
 }
-#poemUl{
-     border-bottom: 1px solid #282828;
+#poemOl{
+        border-bottom: 1px solid #282828;
     padding: 0;
     padding-bottom: 2em;
+   
+    width: 100%;
+    width: fit-content;
 }
 #copy{
     align-self: flex-end; 
@@ -292,7 +310,4 @@ span:hover{
     vertical-align: top;
     padding-left: 1.3em;
     line-height: 1;
-}
-#poemUl > li:hover{
-    color: #b8860b
 }

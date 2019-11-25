@@ -12,7 +12,7 @@ export const getPoem = async() => {
     const authorDiv = document.getElementById('authorDiv');
     const poemH = document.getElementById('poemH');
     const app = document.getElementById('app');
-    let poemUl = document.getElementById('poemUl');
+    let poemOl = document.getElementById('poemOl');
     const modal = document.getElementById("myModal");
     const modalText = document.getElementById("modalText");
     let wordModal = document.getElementById("wordModal");
@@ -49,7 +49,7 @@ export const getPoem = async() => {
         let li = document.createElement("li")
         li.classList.add(`${i}`);
         li.innerText = line
-        poemUl.appendChild(li)
+        poemOl.appendChild(li)
             });
             
     let h = document.createTextNode(poemObj.title)
@@ -65,8 +65,8 @@ export const getPoem = async() => {
 
     }
     authorDiv.appendChild(authorName)
-    poemDiv.appendChild(poemUl)
-    
+    poemDiv.appendChild(poemOl)
+    debugger
 // Expand Line
     const fetchWord = function (event) {
         if (modalOn === true) {
@@ -86,7 +86,7 @@ export const getPoem = async() => {
         let lineClass = line.classList;
         let lineArr = line.innerText.split(" ");
         
-        lineArr.forEach((word, i) => {
+        lineArr.forEach((word) => {
             modalText.innerHTML += `<span>${word} </span>`
 
         });
@@ -119,19 +119,32 @@ export const getPoem = async() => {
     }
 
     const keypress = function(event) {
-        if (modalText.innerText !== '' && (event.key === "ArrowLeft" || event.key === "ArrowRight")) {
-            let oldClass = Number(modalText.classList.value)
+        debugger
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            let oldClass = Number(modalText.classList.value);
+            let newClass;
             if (event.key === "ArrowLeft") {
-                oldClass = oldClass - 1
+                newClass = oldClass - 1
             } else {
-                oldClass = oldClass + 1
+                newClass = oldClass + 1
             }
+            let nextLi = document.getElementsByClassName(newClass);
+            debugger
+            if (nextLi[0].innerText !== undefined){
+                modalText.innerHTML = ''
+                
+                let lineArr = nextLi[0].innerText.split(" ");
+                lineArr.forEach((word) => {
+                    modalText.innerHTML += `<span>${word} </span>`
 
-            let nextLi = document.getElementsByClassName(oldClass);
-    
-            modalText.innerText = nextLi[0].innerText;
-            modalText.className = oldClass;
-            wordModal.style.display = "none";
+                });
+                modalText.className = newClass;
+                let spans = document.querySelectorAll("span");
+                spans.forEach(span => {
+                    span.addEventListener("click", fetchWord);
+                });
+                wordModal.style.display = "none";
+            }
         }
     }
     document.addEventListener("keydown", keypress, false);
@@ -203,4 +216,5 @@ export const getPoem = async() => {
             appOn = false
         }
     }
+    
     }
