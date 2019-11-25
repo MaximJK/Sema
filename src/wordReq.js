@@ -18,7 +18,6 @@ export let wordFetcher = async function(word){
 
     if (wordInfo.length !== 0) {
         let result = wordInfo.results;
-        debugger
         let definitions = result[0].lexicalEntries[0].entries[0].senses.map(sense => {
             return sense.definitions
         });
@@ -28,13 +27,12 @@ export let wordFetcher = async function(word){
             "definitions": definitions,
             "etymologies": etymologies
         };
-        debugger
         let wordModal = document.getElementById("wordModal")
         let etymologyEl = document.getElementById("etymology");
         let definitionsEl = document.getElementById("definitions");
-        debugger
+        let searchWord = document.getElementById("searchWord");
+        searchWord.innerText = data.word
         etymologyEl.innerText = data.etymologies[0];
-        debugger
         while (definitionsEl.hasChildNodes()) {
             definitionsEl.removeChild(definitionsEl.firstChild);
         }
@@ -46,7 +44,6 @@ export let wordFetcher = async function(word){
         });
         }
         wordModal.style.display = "block"
-        debugger
         }
     } catch (err) {
         alert(err);

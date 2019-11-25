@@ -35,47 +35,61 @@ ul{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.872); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.92); /* Black w/ opacity */
 }
 #modalText {
-    z-index: 3;
+       z-index: 3;
     text-align: center;
-    width: 90%;
+    width: 100%;
     position: fixed;
     top: 45%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
     font-size: 10vh;
     line-height: 10vh;
+    max-width: 90%;
 }
 #wordModal{
     display: none;
     position: fixed;
     top: 5.5%;
-    padding: 15px;
-    text-align: center;
+    padding: 4em;
+    text-align: left;
     z-index: 3;
-        max-width: 70em;
-      
-    border-color: red;
-    cursor: pointer;
+    max-width: 70em;
     border: 1px solid darkgoldenrod;
-    background-color: rgba(158, 158, 158, 0.728);
+    background-color: rgba(255, 255, 255, 0.99);
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     left: 0;
     right: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
-
-
+    color: black;
+    padding-top: 1em;
+    max-height: 22em;
+    overflow: overlay;
+    
+}
+#searchWord{
+  text-align: center;
+    margin-top: 5px;
+    font-size: 4em;
+    margin-bottom: .2em;
+    line-height: 1em;
+    border-bottom: darkgoldenrod solid 1px;
 }
 #wordModal > #defH3, #definitions, #etymology{
     display: inherit;
+    text-align: inherit;
 }
 #definitions > li{
-    display: inherit;
+    text-align: inherit;
+}
+#etymology{
+    margin-left: 2em;
 }
 #authorDiv{
     cursor: pointer;
@@ -181,12 +195,12 @@ header {
 
 
     position: fixed;
-    padding: 15px;
+    padding-right: 2em;
     font-size: 80px;
     line-height: 16em;
     color: white;
     height: auto;
-
+    z-index: 4;
 
 }
 #rightArrow{
@@ -198,6 +212,8 @@ header {
     line-height: 16em;
     color: white;
     height: auto;
+    padding-left: 2em;
+    z-index: 4;
     
 }
 #rightArrow:active, #leftArrow:active {
@@ -206,8 +222,7 @@ header {
     color: black;
 }
 span:hover{
-    text-shadow: 2px 2px rgba(255, 255, 255, 0.673);
-    color: darkgoldenrod;
+    text-decoration: darkgoldenrod underline;
 }
 
 
@@ -279,6 +294,5 @@ span:hover{
     line-height: 1;
 }
 #poemUl > li:hover{
-    color: #b8860b;
-    background-image: linear-gradient( black, white, black);
+    color: #b8860b
 }
