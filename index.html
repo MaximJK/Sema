@@ -12,7 +12,7 @@ import dist/main.css -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
-    <link href="node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link href="dist/all.css" rel="stylesheet">
   
 </head>
 
@@ -50,10 +50,11 @@ import dist/main.css -->
         <div id="flexBox">
         <div id='authorInfo'></div>
         <div id="appDiv">
-           <p> click a line to expand it </p>
-            <p>then click a word for its definition and etymology</p>
-            <p>change lines with arrow keys or arros on screen</p>
-            <input type="button" id="buttonStyle" onClick="addLineNumber()" value="show line number">
+           <p> click a line to expand </p>
+            <p> click a word to fetch its definitions and etymology</p>
+            <p> change lines using the arrow keys or the arrows on screen</p>
+            <p> click the authors name to fetch information about the author</p>
+            <input type="button" id="buttonStyle" onClick="addLineNumber()" value="toggle line numbers">
         </div>
         <div id="poemDiv">
             <ol id="poemOl"></ol>

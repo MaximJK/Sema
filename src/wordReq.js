@@ -1,6 +1,9 @@
 export let wordFetcher = async function(word){
     // const myHeaders = new Headers({"app_id": "fa8c7193",
     //     "app_key": "9301c0da56a944088d80f425ee8dcc76"});
+    let etymologyEl = document.getElementById("etymology");
+    let definitionsEl = document.getElementById("definitions");
+    let searchWord = document.getElementById("searchWord");
     let options = {
         mode: 'cors',
         method: "GET",
@@ -28,9 +31,6 @@ export let wordFetcher = async function(word){
             "etymologies": etymologies
         };
         let wordModal = document.getElementById("wordModal")
-        let etymologyEl = document.getElementById("etymology");
-        let definitionsEl = document.getElementById("definitions");
-        let searchWord = document.getElementById("searchWord");
         searchWord.innerText = data.word
         etymologyEl.innerText = data.etymologies[0];
         while (definitionsEl.hasChildNodes()) {
@@ -46,7 +46,11 @@ export let wordFetcher = async function(word){
         wordModal.style.display = "block"
         }
     } catch (err) {
-        alert(err);
+        
+        searchWord.innerText = "Sorry, word could not be found."
+        etymologyEl.innerText = ''
+        definitionsEl.innerText = ''
+        wordModal.style.display = "block"
     }; 
 };
 

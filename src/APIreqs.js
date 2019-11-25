@@ -153,28 +153,51 @@ export const getPoem = async() => {
 
 // arrow click listeners $ functions
     const leftClick = function () {
+        let newClass
         if (modalText.innerText !== '') {
             let oldClass = Number(modalText.classList.value);
-            oldClass = oldClass - 1;
-            let nextLi = document.getElementsByClassName(oldClass);
-            modalText.innerText = nextLi[0].innerText;
-            modalText.className = oldClass
-            wordModal.style.display = "none";
+            newClass = oldClass - 1;
+            let nextLi = document.getElementsByClassName(newClass);
+            if (nextLi[0].innerText !== undefined) {
+                modalText.innerHTML = ''
+                let lineArr = nextLi[0].innerText.split(" ");
+                lineArr.forEach((word) => {
+                    modalText.innerHTML += `<span>${word} </span>`
+
+                });
+                modalText.className = newClass
+
+                let spans = document.querySelectorAll("span");
+                spans.forEach(span => {
+                    span.addEventListener("click", fetchWord);
+                });
+                wordModal.style.display = "none";
         }
+    }
     }
     const rightClick = function () {
+        let newClass
         if (modalText.innerText !== '') {
-            let oldClass = Number(modalText.classList.value)
-            oldClass = oldClass + 1
-            let nextLi = document.getElementsByClassName(oldClass);
-            modalText.innerText = nextLi[0].innerText;
-            modalText.className = oldClass;
-            wordModal.style.display = "none";
+            let oldClass = Number(modalText.classList.value);
+            newClass = oldClass + 1;
+            let nextLi = document.getElementsByClassName(newClass);
+            if (nextLi[0].innerText !== undefined) {
+                modalText.innerHTML = ''
+                let lineArr = nextLi[0].innerText.split(" ");
+                lineArr.forEach((word) => {
+                    modalText.innerHTML += `<span>${word} </span>`
 
+                });
+                modalText.className = newClass
+
+                let spans = document.querySelectorAll("span");
+                spans.forEach(span => {
+                    span.addEventListener("click", fetchWord);
+                });
+                wordModal.style.display = "none";
+            }
         }
-        
     }
-
     leftArrow.addEventListener("click", leftClick );
     rightArrow.addEventListener("click", rightClick);
 
@@ -216,5 +239,4 @@ export const getPoem = async() => {
             appOn = false
         }
     }
-    
-    }
+}
