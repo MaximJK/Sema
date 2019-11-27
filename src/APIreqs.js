@@ -23,6 +23,7 @@ export const getPoem = async() => {
     let appInfo = document.getElementById("appInfo")
     let appDiv = document.getElementById("appDiv");
     let flexBox = document.getElementById("flexBox");
+    let flexModal = document.getElementById("flexModal")
     modalText.innerText = ''
     const fetchTitles = await fetch("https://thundercomb-poetry-db-v1.p.rapidapi.com/title", {
         "method": "GET",
@@ -66,7 +67,6 @@ export const getPoem = async() => {
     }
     authorDiv.appendChild(authorName)
     poemDiv.appendChild(poemOl)
-    debugger
 // Expand Line
     const fetchWord = function (event) {
         if (modalOn === true) {
@@ -81,6 +81,7 @@ export const getPoem = async() => {
 
         flexBox.style.filter = "blur(1px)";
         modal.style.display = "block";
+        flexModal.style.display = "flex"
         let line = event.target;
         
         let lineClass = line.classList;
@@ -110,16 +111,16 @@ export const getPoem = async() => {
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            flexModal.style.display = "none"
             modalText.innerText = ''
             
-            wordModal.style.display = "none";
+            wordModal.style.visibility = "hidden";
             flexBox.style.filter = "none"
             modalOn = false
         }
     }
 
     const keypress = function(event) {
-        debugger
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
             let oldClass = Number(modalText.classList.value);
             let newClass;
@@ -143,7 +144,7 @@ export const getPoem = async() => {
                 spans.forEach(span => {
                     span.addEventListener("click", fetchWord);
                 });
-                wordModal.style.display = "none";
+                wordModal.style.visibility = "hidden";
             }
         }
     }
@@ -171,7 +172,7 @@ export const getPoem = async() => {
                 spans.forEach(span => {
                     span.addEventListener("click", fetchWord);
                 });
-                wordModal.style.display = "none";
+                wordModal.style.visibility = "hidden";
         }
     }
     }

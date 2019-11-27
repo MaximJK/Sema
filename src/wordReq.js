@@ -12,7 +12,6 @@ export let wordFetcher = async function(word){
             "app_key": "9301c0da56a944088d80f425ee8dcc76"
         }
     };
-    debugger
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let wordLower = word.toLowerCase();
     try {
@@ -43,14 +42,14 @@ export let wordFetcher = async function(word){
             definitionsEl.appendChild(li);
         });
         }
-        wordModal.style.display = "block"
+        wordModal.style.visibility= "visible"
         }
     } catch (err) {
         
         searchWord.innerText = "Sorry, word could not be found."
         etymologyEl.innerText = ''
         definitionsEl.innerText = ''
-        wordModal.style.display = "block"
+        wordModal.style.visible = "visible"
     }; 
 };
 
