@@ -235,10 +235,10 @@ span:hover{
     overflow: auto;
     min-height: 2em;
     width: 100%;
-    margin-top: 4em;
+    margin-top: 5vh;
     margin-bottom: 5em;
     justify-content: center;
-    margin-top: 5%;
+    
     
 }
 #appDiv{
@@ -313,15 +313,14 @@ span:hover{
     width: 100%;
     align-items: center;
     top: 15%;
-        
+    pointer-events:none; 
 }
 #lineDiv{
    display: flex;
     justify-content: space-between;
     width: 100%;
     height: 17vh;
-    margin-bottom: 6%;
-    
+    pointer-events:auto; 
     
 }
 
