@@ -54,12 +54,14 @@ ul{
 #modalText {
     z-index: 3;
     text-align: center;
-    font-size: 10vh;
+    font-size: 8vh;
     line-height: 10vh;
-    max-width: 90%;
+    max-width: 85%;
+    margin-top: 5vh;
+    margin:0;
 }
 #wordModal {
-    visibility: hidden;
+    display: none;
     padding: 4em;
     text-align: left;
     z-index: 3;
@@ -70,7 +72,7 @@ ul{
     width: fit-content;
     color: #070707;
     padding-top: 1em;
-    max-height: 22em;
+    max-height: 40em;
     overflow: overlay;
 }
 #searchWord{
@@ -85,6 +87,7 @@ ul{
     display: inherit;
     text-align: inherit;
 }
+
 #definitions > li{
     text-align: inherit;
 }
@@ -194,36 +197,34 @@ header {
     
 }
 #leftArrow{
-
-
-    position: fixed;
-    padding-right: 2em;
-    font-size: 80px;
-    line-height: 16em;
+    align-self: center;
+    
+    
+    font-size: 8vh;
+        padding: 1%;
     color: #fafafa;
-    height: auto;
     z-index: 4;
 
 }
 #rightArrow{
-    height: max-content;
-    position: fixed;
-    right: 0px;
-    font-size: 80px;
-    line-height: 16em;
+    align-self: center;
+    
+    font-size: 8vh;
+    
     color: #fafafa;
-    height: auto;
-    padding-left: 2em;
+    
+        padding: 1%;
     z-index: 4;
     
 }
 #rightArrow:active, #leftArrow:active {
     text-shadow: 2px 2px rgba(255, 255, 255, 0.673);
     
-    color: #070707;
+    color: darkgoldenrod;
 }
 span:hover{
     text-decoration: darkgoldenrod underline;
+    cursor: pointer;
 }
 
 
@@ -237,6 +238,7 @@ span:hover{
     margin-top: 4em;
     margin-bottom: 5em;
     justify-content: center;
+    margin-top: 5%;
     
 }
 #appDiv{
@@ -303,13 +305,23 @@ span:hover{
     line-height: 1;
 }
 #flexModal{
-    position: fixed;
+       position: fixed;
     z-index: 3;
     display: none;
     flex-direction: column;
     justify-content: center;
     width: 100%;
     align-items: center;
-    top: 6.5%;
+    top: 15%;
+        
+}
+#lineDiv{
+   display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 17vh;
+    margin-bottom: 6%;
+    
+    
 }
 

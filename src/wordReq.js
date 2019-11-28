@@ -15,41 +15,41 @@ export let wordFetcher = async function(word){
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let wordLower = word.toLowerCase();
     try {
-    let fetchingWord = await fetch(proxyurl + `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordLower}`, options);
-    let wordInfo = await fetchingWord.json();
+        let fetchingWord = await fetch(proxyurl + `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordLower}`, options);
+        let wordInfo = await fetchingWord.json();
 
-    if (wordInfo.length !== 0) {
-        let result = wordInfo.results;
-        let definitions = result[0].lexicalEntries[0].entries[0].senses.map(sense => {
-            return sense.definitions
-        });
-        let etymologies = result[0].lexicalEntries[0].entries[0].etymologies;
-        let data = {
-            "word": result[0].id,
-            "definitions": definitions,
-            "etymologies": etymologies
-        };
-        let wordModal = document.getElementById("wordModal")
-        searchWord.innerText = data.word
-        etymologyEl.innerText = data.etymologies[0];
-        while (definitionsEl.hasChildNodes()) {
-            definitionsEl.removeChild(definitionsEl.firstChild);
-        }
-        if (data.definitions !== 'undefined') {
-        data.definitions.forEach(def => {
-            let li = document.createElement("li");
-            li.innerText = def[0];
-            definitionsEl.appendChild(li);
-        });
-        }
-        wordModal.style.visibility= "visible"
-        }
+        if (wordInfo.length !== 0) {
+            let result = wordInfo.results;
+            let definitions = result[0].lexicalEntries[0].entries[0].senses.map(sense => {
+                return sense.definitions
+            });
+            let etymologies = result[0].lexicalEntries[0].entries[0].etymologies;
+            let data = {
+                "word": result[0].id,
+                "definitions": definitions,
+                "etymologies": etymologies
+            };
+            let wordModal = document.getElementById("wordModal")
+            searchWord.innerText = data.word
+            etymologyEl.innerText = data.etymologies[0];
+            while (definitionsEl.hasChildNodes()) {
+                definitionsEl.removeChild(definitionsEl.firstChild);
+            }
+            if (data.definitions !== 'undefined') {
+            data.definitions.forEach(def => {
+                let li = document.createElement("li");
+                li.innerText = def[0];
+                definitionsEl.appendChild(li);
+            });
+            }
+            wordModal.style.display = "block"
+            }
     } catch (err) {
         
-        searchWord.innerText = "Sorry, word could not be found."
+        searchWord.innerHTML = `Sorry, ${word} could not be found.`
         etymologyEl.innerText = ''
         definitionsEl.innerText = ''
-        wordModal.style.visible = "visible"
+        wordModal.style.display = "block"
     }; 
 };
 

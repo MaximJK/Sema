@@ -114,7 +114,7 @@ export const getPoem = async() => {
             flexModal.style.display = "none"
             modalText.innerText = ''
             
-            wordModal.style.visibility = "hidden";
+            wordModal.style.display = "none";
             flexBox.style.filter = "none"
             modalOn = false
         }
@@ -130,7 +130,7 @@ export const getPoem = async() => {
                 newClass = oldClass + 1
             }
             let nextLi = document.getElementsByClassName(newClass);
-            debugger
+        
             if (nextLi[0].innerText !== undefined){
                 modalText.innerHTML = ''
                 
@@ -144,7 +144,7 @@ export const getPoem = async() => {
                 spans.forEach(span => {
                     span.addEventListener("click", fetchWord);
                 });
-                wordModal.style.visibility = "hidden";
+                wordModal.style.display = "none"
             }
         }
     }
@@ -155,7 +155,6 @@ export const getPoem = async() => {
 // arrow click listeners $ functions
     const leftClick = function () {
         let newClass
-        if (modalText.innerText !== '') {
             let oldClass = Number(modalText.classList.value);
             newClass = oldClass - 1;
             let nextLi = document.getElementsByClassName(newClass);
@@ -172,16 +171,15 @@ export const getPoem = async() => {
                 spans.forEach(span => {
                     span.addEventListener("click", fetchWord);
                 });
-                wordModal.style.visibility = "hidden";
-        }
+                wordModal.style.display = "none"
     }
     }
     const rightClick = function () {
         let newClass
-        if (modalText.innerText !== '') {
             let oldClass = Number(modalText.classList.value);
             newClass = oldClass + 1;
             let nextLi = document.getElementsByClassName(newClass);
+        
             if (nextLi[0].innerText !== undefined) {
                 modalText.innerHTML = ''
                 let lineArr = nextLi[0].innerText.split(" ");
@@ -195,8 +193,7 @@ export const getPoem = async() => {
                 spans.forEach(span => {
                     span.addEventListener("click", fetchWord);
                 });
-                wordModal.style.display = "none";
-            }
+                wordModal.style.display = "none"
         }
     }
     leftArrow.addEventListener("click", leftClick );
