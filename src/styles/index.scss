@@ -1,5 +1,7 @@
 body {
-        background-image: radial-gradient(circle at right, #090b19, #171308);
+    background-image: radial-gradient(circle at bottom right,#070707, #101118, #171308);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #fafafa;
     font-family: 'Vollkorn', serif;
     height: 100vh;
@@ -325,3 +327,9 @@ span:hover{
     
 }
 
+.fa, .fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    
+        padding: .5vh;
+}
