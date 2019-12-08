@@ -32,7 +32,9 @@ import dist/main.css -->
                 <i class="fas fa-caret-down"></i>
             </div>
             <div id="appInfo">
-            sema
+            <i id="appcarrot" class="fas fa-caret-down"></i>
+            <p id=sema>sema</p>
+        
             </div>
             </div>
             </header>
@@ -62,19 +64,20 @@ import dist/main.css -->
             <p> Click a word to fetch its definitions and etymology</p>
             <p> Change lines using the arrow keys or the arrows on screen</p>
             <p> Click the author's name to fetch information about the author</p>
-            <input type="button" id="buttonStyle" onClick="addLineNumber()" value="toggle line numbers">
+            <input type="button" class="buttonStyle" onClick="addLineNumber()" value="toggle line numbers">
         </div>
         <div id="poemDiv">
             <ol id="poemOl"></ol>
         </div>
         </div>
         <footer id="footer">
-            <input type="button" id="buttonStyle" onClick="refreshPage()" value="another poem">
+            <input type="button" class="buttonStyle" onClick="refreshPage()" value="another poem">
             <div id="subFooter">
             <p id="copy">© 2019 Max Koiwai</p>
-            <a href="https://github.com/MaximJK/Sema">
-            <i class="fab fa-github"></i>
-            </a>
+            <div>
+            <a href="https://github.com/MaximJK/Sema"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/maxkoiwai/"><i class="fab fa-linkedin"></i></a>
+            </div>
             </div>
         </footer>
         </main>

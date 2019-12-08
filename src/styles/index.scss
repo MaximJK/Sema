@@ -102,12 +102,13 @@ ul{
     font-size: 2vh;
     display: inline-block;
     padding-top: .8em;
+    padding-right: .5vh;
 }
 #authorDiv:hover{
     
         text-decoration: darkgoldenrod underline;
 }
-#buttonStyle{
+.buttonStyle{
     display:flex;
     font-size: 15px;
     font-family: inherit;
@@ -119,6 +120,9 @@ ul{
     color: #fafafa;
     margin: 20px;
     z-index: 1;
+}
+.buttonStyle:hover{
+    color: darkgoldenrod
 }
 
 footer {
@@ -150,7 +154,7 @@ footer {
     line-height: 1.5;
     
 }
-#appInfo:hover{
+#sema:hover{
         text-decoration: darkgoldenrod underline;
     
 }
@@ -286,7 +290,7 @@ span:hover{
     font-size: 14px;
     padding-left: 1em
 }
-.fa-github{
+.fab{
     font-family: 'Font Awesome 5 Brands';
     margin-right: 20px;
     margin-bottom: 15px;
@@ -295,8 +299,8 @@ span:hover{
     align-self: flex-end;
 }
 
-.fa-github:hover{
-    color: #fafafa;
+.fab:hover{
+    color: darkgoldenrod;
 }
 
 .fa-align-justify{
@@ -331,5 +335,11 @@ span:hover{
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     
-        padding: .5vh;
 }
+#appcarrot{
+    font-size: 1.5vh;
+}
+#sema{
+    display: inline;
+}
+
