@@ -59,8 +59,8 @@ ul{
     font-size: 8vh;
     line-height: 10vh;
     max-width: 85%;
-    margin-top: 5vh;
     margin:0;
+    align-self: center;
 }
 #wordModal {
     display: none;
@@ -195,7 +195,7 @@ header {
     position: fixed;
     margin-top: 7vh;
     width: 22.5%;
-    overflow: auto;
+    overflow: scroll;
     
 }
 
