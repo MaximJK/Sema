@@ -146,7 +146,7 @@ footer {
 }
 #appInfo{
     font-family: 'UnifrakturMaguntia', cursive;
-    font-size: 5vh;
+    font-size: 6vh;
     text-align: right;
     display: inline-block;
     vertical-align: top;
@@ -312,7 +312,7 @@ span:hover{
     line-height: 1;
 }
 #flexModal{
-       position: fixed;
+    position: fixed;
     z-index: 3;
     display: none;
     flex-direction: column;
