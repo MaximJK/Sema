@@ -102,7 +102,7 @@ ul{
     font-size: 2vh;
     display: inline-block;
     padding-top: .8em;
-    padding-right: .5vh;
+    padding-right: .3vh;
 }
 #authorDiv:hover{
     
@@ -117,7 +117,7 @@ ul{
     padding: 10px;
     cursor: pointer;
     overflow: hidden;
-    color: #fafafa;
+    color: #8e8d8d;
     margin: 20px;
     z-index: 1;
 }
@@ -143,6 +143,7 @@ footer {
     position: inherit;
     bottom: inherit;
     z-index: 0;
+    margin-bottom: .5vh;
 }
 #appInfo{
     font-family: 'UnifrakturMaguntia', cursive;
@@ -151,7 +152,6 @@ footer {
     display: inline-block;
     vertical-align: top;
     padding-right: .5em;
-    line-height: 1.5;
     
 }
 #sema:hover{
@@ -195,7 +195,7 @@ header {
     position: fixed;
     margin-top: 7vh;
     width: 22.5%;
-    overflow: scroll;
+    overflow: auto;
     
 }
 
@@ -242,7 +242,7 @@ span:hover{
     overflow: auto;
     min-height: 2em;
     width: 100%;
-    margin-top: 7vh;
+    margin-top: 6vh;
     margin-bottom: 5em;
     justify-content: center;
     
@@ -275,6 +275,7 @@ span:hover{
     max-width: 75%;
     white-space: nowrap;
     font-size: 3vh;
+    text-decoration: underline darkgoldenrod;
 }
 #poemOl{
         border-bottom: 1px solid #282828;
@@ -285,15 +286,14 @@ span:hover{
     width: fit-content;
 }
 #copy{
-    
+    align-self: flex-end;
     color: #5a5a5a;
     font-size: 14px;
     padding-left: 1em
 }
 .fab{
     font-family: 'Font Awesome 5 Brands';
-    margin-right: 20px;
-    margin-bottom: 15px;
+    margin-right: 1.5vh;
     font-size: 2em;
     color: #5a5a5a;
     align-self: flex-end;
@@ -341,5 +341,5 @@ span:hover{
 }
 #sema{
     display: inline;
+    cursor: pointer;
 }
-
