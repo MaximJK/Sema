@@ -1,5 +1,7 @@
 # Sema
 
+https://maximjk.github.io/Sema/
+
 > Sema is a javascript app that presents poetry in a beautiful, readable,
 > form to encourage slow reading and to conveniently display
 > auxiliary information to aid reader's interpretative efforts.
