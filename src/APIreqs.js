@@ -48,7 +48,7 @@ export const getPoem = async() => {
     const poemObj = { title: poem[0].title, author: poem[0].author, lines: poem[0].lines };
     poemObj.lines.forEach((line, i) => {
         let li = document.createElement("li")
-        li.classList.add(`${i}`);
+        li.id = `${i}`;
         li.innerText = line
         poemOl.appendChild(li)
             });
@@ -84,7 +84,7 @@ export const getPoem = async() => {
         flexModal.style.display = "flex"
         let line = event.target;
         
-        let lineClass = line.classList;
+        let lineId = line.id;
         let lineArr = line.innerText.split(" ");
         
         lineArr.forEach((word) => {
@@ -95,7 +95,7 @@ export const getPoem = async() => {
 
         modalOn = true;
         
-        modalText.className = lineClass;
+        modalText.className = lineId;
         let spans = document.querySelectorAll("span");
         spans.forEach(span => {
             span.addEventListener("click", fetchWord);
@@ -119,22 +119,23 @@ export const getPoem = async() => {
             modalOn = false
         }
     }
-
+    //arrow key event listener 
     const keypress = function(event) {
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-            let oldClass = Number(modalText.classList.value);
-            let newClass;
-            if (event.key === "ArrowLeft") {
-                newClass = oldClass - 1
-            } else {
-                newClass = oldClass + 1
-            }
-            let nextLi = document.getElementsByClassName(newClass);
-        
-            if (nextLi[0].innerText !== undefined){
+            //check key press is a horizontal arrow
+            let prevClass = Number(modalText.classList.value);
+            debugger
+            //get line number 
+            let newClass = (event.key === "ArrowLeft") ? prevClass - 1 : prevClass + 1
+            //advance or retreat line #
+            let nextLi = document.getElementById(newClass);
+            debugger
+            //get the li of the next line
+            if (nextLi.innerText !== undefined) {
+                //clear 
                 modalText.innerHTML = ''
                 
-                let lineArr = nextLi[0].innerText.split(" ");
+                let lineArr = nextLi.innerText.split(" ");
                 lineArr.forEach((word) => {
                     modalText.innerHTML += `<span>${word} </span>`
 
@@ -148,8 +149,8 @@ export const getPoem = async() => {
             }
         }
     }
-    document.addEventListener("keydown", keypress, false);
 
+    document.addEventListener("keydown", keypress, false);
 
 
 // arrow click listeners $ functions
@@ -157,10 +158,10 @@ export const getPoem = async() => {
         let newClass
             let oldClass = Number(modalText.classList.value);
             newClass = oldClass - 1;
-            let nextLi = document.getElementsByClassName(newClass);
-            if (nextLi[0].innerText !== undefined) {
+            let nextLi = document.getElementById(newClass);
+            if (nextLi.innerText !== undefined) {
                 modalText.innerHTML = ''
-                let lineArr = nextLi[0].innerText.split(" ");
+                let lineArr = nextLi.innerText.split(" ");
                 lineArr.forEach((word) => {
                     modalText.innerHTML += `<span>${word} </span>`
 
@@ -178,11 +179,11 @@ export const getPoem = async() => {
         let newClass
             let oldClass = Number(modalText.classList.value);
             newClass = oldClass + 1;
-            let nextLi = document.getElementsByClassName(newClass);
+            let nextLi = document.getElementById(newClass);
         
-            if (nextLi[0].innerText !== undefined) {
+            if (nextLi.innerText !== undefined) {
                 modalText.innerHTML = ''
-                let lineArr = nextLi[0].innerText.split(" ");
+                let lineArr = nextLi.innerText.split(" ");
                 lineArr.forEach((word) => {
                     modalText.innerHTML += `<span>${word} </span>`
 
