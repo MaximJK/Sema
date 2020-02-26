@@ -38,4 +38,4 @@ https://maximjk.github.io/Sema/
  ![in action](https://media.giphy.com/media/QA6neIcEWYfARAL5y9/giphy.gif)
 
 **Code Snippets**
- ![in action](https://ibb.co/VqhyXNm)
+ ![code snippet](https://ibb.co/VqhyXNm)
