@@ -5,10 +5,12 @@ import {
 const fetch = require('node-fetch');
 
 export const getPoem = async() => {
-    
+    // set modals
     let modalOn = false
     let authOn = false
     let appOn = false
+
+    // get DOM elements
     const authorDiv = document.getElementById('authorDiv');
     const poemH = document.getElementById('poemH');
     const app = document.getElementById('app');
@@ -25,11 +27,14 @@ export const getPoem = async() => {
     let flexBox = document.getElementById("flexBox");
     let flexModal = document.getElementById("flexModal")
     modalText.innerText = ''
-    const fetchTitles = await fetch("https://thundercomb-poetry-db-v1.p.rapidapi.com/title", {
+
+
+    // fetch titles from poetry api, picks one at random than request poem
+    const fetchTitles = await fetch("https://poetrydb.org/title", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
-            "x-rapidapi-key": "08fdd563dcmshc0ae5fec65e6b78p1160efjsn196e12f76f1b"
+            // "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
+            // "x-rapidapi-key": "08fdd563dcmshc0ae5fec65e6b78p1160efjsn196e12f76f1b"
         }
         });
 
@@ -37,6 +42,7 @@ export const getPoem = async() => {
     const titlesArr = await fetchTitles.json();
     const titles = titlesArr.titles;
     let poemName = titles[Math.floor(Math.random() * titles.length)];
+
     const fetchPoem = await fetch(`https://thundercomb-poetry-db-v1.p.rapidapi.com/title/${poemName}`, {
         "method": "GET",
         "headers": {
