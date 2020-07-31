@@ -30,12 +30,13 @@ export const getPoem = async() => {
 
 
     // fetch titles from poetry api, picks one at random than request poem
-    const fetchTitles = await fetch("https://thundercomb-poetry-db-v1.p.rapidapi.com/title", {
+    const fetchTitles = await fetch('https://poetrydb.org/title', {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "https://thundercomb-poetry-db-v1.p.rapidapi.com/title",
-	    "x-rapidapi-key": "3faf77f5bdmsh52bb5c025536d15p186443jsn965ccb988189",
-	    "useQueryString": true
+        //     "x-rapidapi-host": "https://thundercomb-poetry-db-v1.p.rapidapi.com/title",
+        //     'X-Requested-With': 'XMLHttpRequest',
+	    // "x-rapidapi-key": "3faf77f5bdmsh52bb5c025536d15p186443jsn965ccb988189",
+	    // "useQueryString": true
         }
         });
 
@@ -44,12 +45,14 @@ export const getPoem = async() => {
     const titles = titlesArr.titles;
     let poemName = titles[Math.floor(Math.random() * titles.length)];
 
-    const fetchPoem = await fetch(`https://thundercomb-poetry-db-v1.p.rapidapi.com/title/${poemName}`, {
+    const fetchPoem = await fetch(`https://poetrydb.org/title/${poemName}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
-	        "x-rapidapi-key": "3faf77f5bdmsh52bb5c025536d15p186443jsn965ccb988189",
-	        "useQueryString": true
+        //     "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
+		// "x-rapidapi-key": "3faf77f5bdmsh52bb5c025536d15p186443jsn965ccb988189",
+        //     "useQueryString": true,
+        //     "Access-Control-Allow-Origin": "*",
+        //     'X-Requested-With': 'XMLHttpRequest',
         }
     });
     const poem = await fetchPoem.json();
@@ -216,7 +219,8 @@ export const getPoem = async() => {
         if (authOn === false) {
             if (authorDiv.innerHTML.length === 0) {
                 let body = await fetch(`https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=${author}`, {
-                    mode: 'cors'
+                    mode: 'cors',
+                    headers: {'X-Requested-With': 'XMLHttpRequest'}
                 });
                 let jsonbody = await body.json();
                 

@@ -10,7 +10,7 @@ module.exports = {
         publicPath: "/dist/"
     },
     resolve: {
-        extensions: [".js"] // if we were using React.js, we would include ".jsx"
+        extensions: [".wasm", ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json"], // if we were using React.js, we would include ".jsx"
     },
     module: {
         rules: [{
