@@ -33,10 +33,7 @@ export const getPoem = async() => {
     const fetchTitles = await fetch('https://poetrydb.org/title', {
         "method": "GET",
         "headers": {
-        //     "x-rapidapi-host": "https://thundercomb-poetry-db-v1.p.rapidapi.com/title",
-        //     'X-Requested-With': 'XMLHttpRequest',
-	    // "x-rapidapi-key": "3faf77f5bdmsh52bb5c025536d15p186443jsn965ccb988189",
-	    // "useQueryString": true
+       
         }
         });
 
@@ -48,11 +45,7 @@ export const getPoem = async() => {
     const fetchPoem = await fetch(`https://poetrydb.org/title/${poemName}`, {
         "method": "GET",
         "headers": {
-        //     "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
-		// "x-rapidapi-key": "3faf77f5bdmsh52bb5c025536d15p186443jsn965ccb988189",
-        //     "useQueryString": true,
-        //     "Access-Control-Allow-Origin": "*",
-        //     'X-Requested-With': 'XMLHttpRequest',
+
         }
     });
     const poem = await fetchPoem.json();
