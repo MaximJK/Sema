@@ -16,7 +16,7 @@ export let wordFetcher = async function(word){
     let wordLower = word.toLowerCase();
     try {
         let fetchingWord = await fetch(proxyurl + `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordLower}`, options);
-        // let fetchingWord = await fetch(proxyurl + `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordLower}`, options);
+        // let fetchingWord = await fetch(`https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${wordLower}`, options);
 
         let wordInfo = await fetchingWord.json();
 
